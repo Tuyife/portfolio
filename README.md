@@ -1,0 +1,1 @@
+I love turning ideas into real websites.My Github is where i share projects i've worked on things i'm learning along the way
