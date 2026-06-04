@@ -8,12 +8,19 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background 0.3s;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #38bdf8;
+  letter-spacing: 1px;
+  transition: transform 0.2s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .nav-links {
@@ -26,11 +33,66 @@
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
   transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #38bdf8;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.theme-toggle {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 12px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.2);
+  transform: rotate(20deg) scale(1.1);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
 }
 
 @media (max-width: 700px) {
@@ -43,43 +105,15 @@
     width: 100%;
     text-align: center;
     display: none;
+    padding: 20px 0;
+    gap: 16px;
   }
 
   .nav-links.active {
     display: flex;
   }
-}
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
 
-.hamburger .line {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  transition: 0.3s;
-}
-
-@media (max-width: 700px) {
   .hamburger {
     display: flex;
   }
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.4rem;
-  color: white;
-  z-index: 2000;
-  margin-left: 1rem;
-}
-
-
-.theme-toggle:hover {
-  transform: rotate(20deg) scale(1.1);
 }

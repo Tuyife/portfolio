@@ -1,0 +1,127 @@
+.services {
+  padding: 60px 24px;
+  text-align: center;
+  background: #f8fafc;
+  transition: background 0.3s;
+}
+
+[data-theme="dark"] .services {
+  background: #0f172a;
+}
+
+.services h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+[data-theme="dark"] .services h2 {
+  color: #f1f5f9;
+}
+
+.section-line {
+  width: 40px;
+  height: 3px;
+  background: #0ea5e9;
+  border-radius: 2px;
+  margin: 0 auto 12px;
+}
+
+.services-subtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 36px;
+}
+
+[data-theme="dark"] .services-subtitle {
+  color: #94a3b8;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 32px 20px 24px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: #0ea5e9;
+  box-shadow: 0 12px 28px rgba(14, 165, 233, 0.15);
+}
+
+.service-card:hover .service-icon {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+[data-theme="dark"] .service-card {
+  background: #1e293b;
+  border-color: rgba(255,255,255,0.08);
+}
+
+[data-theme="dark"] .service-card:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 12px 28px rgba(56, 189, 248, 0.15);
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: #0ea5e9;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+[data-theme="dark"] .service-icon {
+  background: rgba(14, 165, 233, 0.15);
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .service-card:hover .service-icon {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+.service-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+[data-theme="dark"] .service-card h3 {
+  color: #f1f5f9;
+}
+
+.service-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+[data-theme="dark"] .service-card p {
+  color: #94a3b8;
+}
+
+@media (max-width: 500px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

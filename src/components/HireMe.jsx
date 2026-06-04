@@ -1,15 +1,12 @@
-import React from 'react';
-import {FaUserTie} from 'react-icons/fa';
-
+import React from 'react'
+import { FaUserTie } from 'react-icons/fa'
 
 export default function HireMeFloat() {
-    return (
-        <a href="mailto:omotuyifeisrael@gmail.com" 
-        className="hireMeFloat"
-            target="_blank"
-        rel="noopener noreferrer"
-        >
-        <FaUserTie size={30} color="#fff" />
-     </a>
-    );
+  const gmailLink = 'https://mail.google.com/mail/?view=cm&to=tuyifeisrael@gmail.com&su=I%20Want%20To%20Hire%20You!'
+
+  return (
+    <a href={gmailLink} className="hireMeFloat" target="_blank" rel="noopener noreferrer">
+      <FaUserTie size={24} color="#fff" />
+    </a>
+  )
 }

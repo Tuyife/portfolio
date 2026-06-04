@@ -1,32 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import About from './components/About';
+import Skills from './components/Skills';
+import Service from './components/Service';
+import Projects from './components/Project';
+import Testimonials from './components/Testimonials';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import WhatsappFloat from './components/WhatsappFloat';
+import HireMe from './components/HireMe';
 import './App.css';
-import About from './components/About.jsx';
-import Footer from './components/Footer.jsx';
-import Contact from './components/Contact.jsx';
-import Project from './components/Project.jsx';
-import Skills from "./components/Skills.jsx";
-import Home from './components/Home.jsx';
-import WhatsappFloat from './components/WhatsappFloat.jsx';
-import HireMe from './components/HireMe.jsx';
-import Navbar from './components/Navbar.jsx';
-import Service from './components/Service.jsx';
-import Testimonials from './components/Testimonials.jsx';
-function App(){
-    return(
-        <div className="App">
-            <h1>Welcome to my portfolio</h1>
-            <Navbar />
-            <Home/>
-            <WhatsappFloat />
-            <About />
-            <Project /> 
-            <Service />
-            <Testimonials />
-            <Skills />
-            <Contact />
-            <HireMe />
-             <Footer />
-        </div>
-    );
+import './Float.css';
+
+function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark';
+  });
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  return (
+    <div className="app">
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <main>
+        <section id="home"><Home /></section>
+        <section id="about"><About /></section>
+        <section id="skills"><Skills /></section>
+        <section id="services"><Service /></section>
+        <section id="projects"><Projects /></section>
+        <section id="testimonials"><Testimonials /></section>
+        <section id="contact"><Contact /></section>
+      </main>
+      <Footer />
+      <WhatsappFloat />
+      <HireMe />
+    </div>
+  );
 }
+
 export default App;

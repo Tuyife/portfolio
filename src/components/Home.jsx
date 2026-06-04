@@ -5,7 +5,7 @@ import heroImage from "../assets/hero.png";
 function Home() {
   return (
     <div className="home">
-     <img src={heroImage} alt="Hero" />
+      <img src={heroImage} alt="Hero" className="home-image" />
       <h2><span>Hello, I'm Tuyife</span></h2>
       <p>A passionate Web developer creating clean and functional design</p>
      <div className="home-buttons">
